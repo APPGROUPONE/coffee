@@ -1,0 +1,327 @@
+/* ==========================================================
+   GENERAL RESET & BASE FONT
+   ========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #faf6f2;
+  color: #3c2a21;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 240px;
+  padding: 2rem 6rem;
+  background-color: transparent;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+  font-family: 'Playfair Display', serif;
+}
+
+.navbar:hover {
+  background-color: #efe1cf;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ==========================================================
+   LOGO SWITCH EFFECT
+   ========================================================== */
+.logo {
+  position: absolute;
+  left: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 450px;
+}
+
+.logo img {
+  position: absolute;
+  height: 100%;
+  width: auto;
+  transition: opacity 0.5s ease;
+}
+
+.logo-default { opacity: 1; }
+.logo-hover { opacity: 0; }
+
+.navbar:hover .logo-default { opacity: 0; }
+.navbar:hover .logo-hover { opacity: 1; }
+
+/* ==========================================================
+   NAV LINKS
+   ========================================================== */
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 6rem;
+  margin-left: 4rem; /* shift links slightly right */
+}
+
+.navbar a {
+  position: relative;
+  color: #efe1cf;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 2.4rem;
+  transition: color 0.3s ease;
+}
+
+/* underline animation */
+.navbar a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: #3c2a21;
+  transition: width 0.3s ease, background-color 0.3s ease;
+}
+
+.navbar a:hover::after,
+.navbar a.active::after {
+  width: 100%;
+}
+
+.navbar a.active {
+  color: #efe1cf;
+}
+
+/* on navbar hover */
+.navbar:hover a {
+  color: #3c2a21;
+}
+
+.navbar:hover a::after {
+  background-color: #3c2a21;
+}
+
+/* active link underline color when navbar hovered */
+.navbar:hover a.active::after {
+  background-color: #CE6950;
+}
+
+/* ==========================================================
+   NAVBAR ICONS (PROFILE + CART)
+   ========================================================== */
+.nav-icons {
+  position: absolute;
+  right: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.icon {
+  position: relative;
+  width: 36px;
+  height: 36px;
+  cursor: pointer;
+}
+
+.icon img {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transition: opacity 0.4s ease, filter 0.3s ease;
+}
+
+/* default light icons visible */
+.icon img.light { opacity: 1; }
+.icon img.brown { opacity: 0; }
+
+/* when navbar hovered → show brown icons */
+.navbar:hover .icon img.light { opacity: 0; }
+.navbar:hover .icon img.brown { opacity: 1; }
+
+/* subtle hover glow */
+.icon:hover img {
+  filter: brightness(1.1);
+}
+
+/* ==========================================================
+   HERO SECTION
+   ========================================================== */
+.hero {
+  position: relative;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  color: #3c2a21;
+}
+
+.hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: brightness(0.65);
+  z-index: 0;
+}
+
+.hero::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: rgba(255, 255, 255, 0.2);
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  padding: 2rem 3rem;
+  color: #fff;
+  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  color: #4b3b2f;
+}
+
+.btn {
+  background-color: #3c2a21;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background-color: #d5bfa3;
+  color: #3c2a21;
+}
+
+/* ==========================================================
+   FEATURED SECTION
+   ========================================================== */
+.featured {
+  padding: 3rem 2rem;
+  text-align: center;
+}
+
+.featured h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.cards {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  width: 280px;
+  padding: 1rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 4px 14px rgba(0,0,0,0.15);
+}
+
+.card img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.card h3 {
+  margin-bottom: 0.5rem;
+  color: #3c2a21;
+}
+
+.card p {
+  color: #5a4639;
+  font-size: 0.95rem;
+}
+
+/* ==========================================================
+   FOOTER
+   ========================================================== */
+footer {
+  background-color: #3c2a21;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  margin-top: 3rem;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================
+   RESPONSIVE DESIGN
+   ========================================================== */
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    gap: 0.5rem;
+    height: auto;
+  }
+
+  .logo {
+    position: static;
+    transform: none;
+    height: auto;
+  }
+
+  .logo img { height: 180px; }
+
+  .navbar ul { gap: 2rem; }
+
+  .navbar a { font-size: 1.4rem; }
+
+  .nav-icons {
+    right: 2rem;
+    gap: 1.5rem;
+  }
+
+  .icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .hero h1 { font-size: 2rem; }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card { width: 90%; }
+}
