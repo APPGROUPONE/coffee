@@ -21,7 +21,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 240px;
+  height: 150px;
   padding: 2rem 6rem;
   background-color: transparent;
   position: fixed;
@@ -46,7 +46,7 @@ body {
   left: 3rem;
   top: 50%;
   transform: translateY(-50%);
-  height: 450px;
+  height: 375px;
 }
 
 .logo img {
@@ -157,17 +157,55 @@ body {
 }
 
 /* ==========================================================
+   NAVBAR SCROLL-ACTIVE STATE
+   ========================================================== */
+.navbar.scrolled {
+  background-color: #efe1cf;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Match hover visuals */
+.navbar.scrolled a {
+  color: #3c2a21;
+}
+
+.navbar.scrolled a::after {
+  background-color: #3c2a21;
+}
+
+.navbar.scrolled a.active::after {
+  background-color: #CE6950;
+}
+
+/* Logo + icons swap */
+.navbar.scrolled .logo-default {
+  opacity: 0;
+}
+.navbar.scrolled .logo-hover {
+  opacity: 1;
+}
+
+.navbar.scrolled .icon img.light {
+  opacity: 0;
+}
+.navbar.scrolled .icon img.brown {
+  opacity: 1;
+}
+
+
+/* ==========================================================
    HERO SECTION
    ========================================================== */
 .hero {
   position: relative;
-  height: 90vh;
+  height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   overflow: hidden;
-  color: #3c2a21;
+  font-family: "Playfair Display", serif;
+  color: #f8f5f0;
 }
 
 .hero video {
@@ -176,7 +214,7 @@ body {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: brightness(0.65);
+  filter: brightness(0.55);
   z-index: 0;
 }
 
@@ -184,42 +222,58 @@ body {
   content: '';
   position: absolute;
   inset: 0;
-  background-color: rgba(255, 255, 255, 0.2);
-  z-index: 0;
+  background: rgba(0, 0, 0, 0.35);
+  z-index: 1;
 }
 
 .hero-content {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   padding: 2rem 3rem;
-  color: #fff;
-  text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+  max-width: 800px;
 }
 
 .hero h1 {
-  font-size: 2.5rem;
-  margin-bottom: 0.75rem;
+  font-size: 3rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  margin-bottom: 1rem;
+  animation: fadeInDown 1.2s ease-out forwards;
 }
 
 .hero p {
-  font-size: 1.1rem;
-  margin-bottom: 1.5rem;
-  color: #4b3b2f;
+  font-size: 1.2rem;
+  line-height: 1.6;
+  color: #e9e2da;
+  margin-bottom: 2rem;
+  animation: fadeInUp 1.5s ease-out forwards;
 }
 
 .btn {
-  background-color: #3c2a21;
-  color: #fff;
-  padding: 0.75rem 1.5rem;
-  border-radius: 6px;
+  background-color: #d5bfa3;
+  color: #3c2a21;
+  padding: 0.9rem 1.8rem;
+  border-radius: 8px;
   text-decoration: none;
-  transition: 0.3s;
+  transition: all 0.3s ease;
   font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .btn:hover {
-  background-color: #d5bfa3;
-  color: #3c2a21;
+  background-color: #3c2a21;
+  color: #fff;
+}
+
+/* Subtle fade-in animation */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
 }
 
 /* ==========================================================

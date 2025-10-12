@@ -43,22 +43,21 @@
     </div>
   </header>
 
-  <!-- ==========================================================
-       HERO SECTION
-       ========================================================== -->
-  <section class="hero">
-    <video autoplay muted loop playsinline id="heroVideo">
-      <source src="videos/Coffee_pouring_video.mp4" type="video/mp4">
-      Your browser does not support the video tag.
-    </video>
+<!-- ==========================================================
+     HERO SECTION
+     ========================================================== -->
+<section class="hero">
+  <video autoplay muted loop playsinline id="heroVideo">
+    <source src="videos/Coffee_pouring_video.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
 
-    <div class="hero-content">
-      <h1 id="greeting">Welcome to 4080 Cafe</h1>
-      <p>Your perfect cup of coffee awaits. Order online or visit us today!</p>
-      <a href="shop.html" class="btn">Shop Now</a>
-    </div>
-  </section>
-
+  <div class="hero-content">
+    <h1 id="greeting">The Art of a Perfect Pour</h1>
+    <p>Savor every note, every aroma — your moment of calm begins here at Café 4080.</p>
+    <a href="menu.html" class="btn">Explore Our Menu</a>
+  </div>
+</section>
 <!-- ==========================================================
      FEATURED DRINKS SECTION
      ========================================================== -->
@@ -119,7 +118,20 @@
   <footer>
     <p>© 2025 Cafe 4080 Coffee Shop | All Rights Reserved</p>
   </footer>
+  <script>
+  window.addEventListener('scroll', () => {
+    const navbar = document.querySelector('.navbar');
+    const hero = document.querySelector('.hero');
 
-  <script src="js/home.js"></script>
+    // Calculate when the hero video is fully out of view
+    const triggerPoint = hero.offsetHeight - 150; // adjust offset if needed
+
+    if (window.scrollY >= triggerPoint) {
+      navbar.classList.add('scrolled');
+    } else {
+      navbar.classList.remove('scrolled');
+    }
+  });
+</script>
 </body>
 </html>
