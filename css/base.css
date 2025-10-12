@@ -1,0 +1,68 @@
+/* ==========================================================
+   GENERAL RESET & BASE FONT
+   ========================================================== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #faf6f2;
+  color: #3c2a21;
+  line-height: 1.6;
+}
+
+/* ==========================================================
+   BUTTONS
+   ========================================================== */
+.btn, .order-btn {
+  font-weight: 500;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.btn {
+  background-color: #d5bfa3;
+  color: #3c2a21;
+  padding: 0.9rem 1.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.btn:hover {
+  background-color: #3c2a21;
+  color: #fff;
+}
+
+.order-btn {
+  margin-top: 1.5rem;
+  padding: 0.8rem 2rem;
+  background-color: #3c2a21;
+  color: #f5efe6;
+  border: none;
+  font-size: 1rem;
+}
+
+.order-btn:hover {
+  background-color: #d5bfa3;
+  color: #3c2a21;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(60, 42, 33, 0.15);
+}
+
+/* ==========================================================
+   ANIMATIONS
+   ========================================================== */
+@keyframes fadeInDown {
+  0% { opacity: 0; transform: translateY(-20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+  0% { opacity: 0; transform: translateY(20px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
