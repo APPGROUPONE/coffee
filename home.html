@@ -1,137 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Cafe 4080 Coffee Shop</title>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href=".vscode/css/home.css" />
+
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/drinks.css">
+
+  <!-- JS to load shared components -->
+  <script src="js/load-components.js" defer></script>
 </head>
 <body>
-  <!-- ==========================================================
-       NAVBAR
-       ========================================================== -->
-  <header class="navbar">
-    <!-- Logo -->
-    <div class="logo">
-      <img src="images/4080inverselogo.png" alt="Cafe 4080 Logo" class="logo-default">
-      <img src="images/4080cafelogo.png" alt="Cafe 4080 Logo Hover" class="logo-hover">
-    </div>
 
-    <!-- Navigation Links -->
-    <nav>
-      <ul>
-        <li><a href="home.html" class="active">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="menu.html">Menu</a></li>
-        <li><a href="shop.html">Shop</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-
-    <!-- Profile + Cart Icons -->
-    <div class="nav-icons">
-      <div class="icon profile-icon">
-        <img src="images/profile_icon_light.png" class="light" alt="Profile">
-        <img src="images/profile_icon_brown.png" class="brown" alt="Profile Hover">
-      </div>
-
-      <div class="icon cart-icon">
-        <img src="images/shopping_bag_icon_light.png" class="light" alt="Cart">
-        <img src="images/shopping_bag_icon_brown.png" class="brown" alt="Cart Hover">
-      </div>
-    </div>
-  </header>
-
-<!-- ==========================================================
-     HERO SECTION
-     ========================================================== -->
-<section class="hero">
-  <video autoplay muted loop playsinline id="heroVideo">
-    <source src="videos/Coffee_pouring_video.mp4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
-
-  <div class="hero-content">
-    <h1 id="greeting">The Art of a Perfect Pour</h1>
-    <p>Savor every note, every aroma — your moment of calm begins here at Café 4080.</p>
-    <a href="menu.html" class="btn">Explore Our Menu</a>
-  </div>
-</section>
-<!-- ==========================================================
-     FEATURED DRINKS SECTION
-     ========================================================== -->
-<section class="featured-drinks">
-  <h2>Featured Holiday Drinks</h2>
-  <p class="intro-text">
-    Discover our handcrafted specialties — each cup brewed with care, warmth, and a touch of Café 4080’s signature flavor.
-  </p>
-
-  <div class="drinks-container">
-    <div class="drink">
-      <img src="images/cinnamon_latte.jpg" alt="Cinnamon Whirl Latte">
-      <div class="drink-info">
-        <h3>Cinnamon Whirl Latte</h3>
-        <p>
-          A swirl of comfort in every sip. The Cinnamon Whirl Latte blends freshly pulled espresso with steamed milk,
-          a drizzle of wild honey, and a dash of hand-ground Ceylon cinnamon. Topped with a soft crown of foam dusted
-          in spice, it’s warm, aromatic, and gently sweet — like your favorite blanket on a cold morning.
-        </p>
-        <p class="ingredients"><em>Ingredients:</em> espresso, steamed milk, Ceylon cinnamon, wild honey, vanilla extract, foam.</p>
-        <button class="order-btn">Order Now</button>
-      </div>
-    </div>
-
-    <div class="drink">
-      <img src="images/mocha_latte.webp" alt="Midnight Mocha Muse">
-      <div class="drink-info">
-        <h3>Midnight Mocha Muse</h3>
-        <p>
-          For dreamers and late-night thinkers, this drink is your muse. The Midnight Mocha Muse combines rich dark chocolate
-          with a double shot of espresso and a hint of hazelnut syrup. Finished with silky whipped cream and chocolate
-          shavings, it’s the perfect harmony of bold and indulgent — deep enough to spark inspiration, smooth enough to savor slowly.
-        </p>
-        <p class="ingredients"><em>Ingredients:</em> espresso, dark cocoa, hazelnut syrup, milk, whipped cream, chocolate shavings.</p>
-        <button class="order-btn">Order Now</button>
-      </div>
-    </div>
-
-    <div class="drink">
-      <img src="images/gingerbread_latte.png" alt="Gingerbread Serenade">
-      <div class="drink-info">
-        <h3>Gingerbread Serenade</h3>
-        <p>
-          Sweet, spiced, and unapologetically cozy — the Gingerbread Serenade is a seasonal favorite that deserves to stay
-          all year. Crafted with our signature espresso, steamed milk, gingerbread spice syrup, and a sprinkle of nutmeg,
-          it sings with notes of molasses and warmth. Each cup feels like a soft carol in a mug.
-        </p>
-        <p class="ingredients"><em>Ingredients:</em> espresso, milk, gingerbread syrup, molasses, nutmeg, whipped topping.</p>
-        <button class="order-btn">Order Now</button>
-      </div>
-    </div>
-  </div>
-</section>
+  <!-- Navbar injected here -->
+  <header class="navbar"></header>
 
   <!-- ==========================================================
-       FOOTER
+       HERO SECTION
        ========================================================== -->
-  <footer>
-    <p>© 2025 Cafe 4080 Coffee Shop | All Rights Reserved</p>
-  </footer>
-  <script>
-  window.addEventListener('scroll', () => {
-    const navbar = document.querySelector('.navbar');
-    const hero = document.querySelector('.hero');
+  <section class="hero">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="videos/Coffee_pouring_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
-    // Calculate when the hero video is fully out of view
-    const triggerPoint = hero.offsetHeight - 150; // adjust offset if needed
+    <div class="hero-content">
+      <h1 id="greeting">The Art of a Perfect Pour</h1>
+      <p>Savor every note, every aroma — your moment of calm begins here at Café 4080.</p>
+      <a href="menu.html" class="btn">Explore Our Menu</a>
+    </div>
+  </section>
 
-    if (window.scrollY >= triggerPoint) {
-      navbar.classList.add('scrolled');
-    } else {
-      navbar.classList.remove('scrolled');
-    }
-  });
-</script>
+  <!-- ==========================================================
+       FEATURED DRINKS SECTION
+       ========================================================== -->
+  <section class="featured-drinks">
+    <h2>Featured Holiday Drinks</h2>
+    <p class="intro-text">
+      Discover our handcrafted specialties — each cup brewed with care, warmth, and a touch of Café 4080’s signature flavor.
+    </p>
+
+    <div class="drinks-container">
+      <!-- Cinnamon Whirl Latte -->
+      <div class="drink">
+        <img src="images/cinnamon_latte.jpg" alt="Cinnamon Whirl Latte">
+        <div class="drink-info">
+          <h3>Cinnamon Whirl Latte</h3>
+          <p>
+            A swirl of comfort in every sip. The Cinnamon Whirl Latte blends freshly pulled espresso with steamed milk,
+            a drizzle of wild honey, and a dash of hand-ground Ceylon cinnamon. Topped with a soft crown of foam dusted
+            in spice, it’s warm, aromatic, and gently sweet — like your favorite blanket on a cold morning.
+          </p>
+          <p class="ingredients"><em>Ingredients:</em> espresso, steamed milk, Ceylon cinnamon, wild honey, vanilla extract, foam.</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <!-- Midnight Mocha Muse -->
+      <div class="drink">
+        <img src="images/mocha_latte.webp" alt="Midnight Mocha Muse">
+        <div class="drink-info">
+          <h3>Midnight Mocha Muse</h3>
+          <p>
+            For dreamers and late-night thinkers, this drink is your muse. The Midnight Mocha Muse combines rich dark chocolate
+            with a double shot of espresso and a hint of hazelnut syrup. Finished with silky whipped cream and chocolate
+            shavings, it’s the perfect harmony of bold and indulgent — deep enough to spark inspiration, smooth enough to savor slowly.
+          </p>
+          <p class="ingredients"><em>Ingredients:</em> espresso, dark cocoa, hazelnut syrup, milk, whipped cream, chocolate shavings.</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
+
+      <!-- Gingerbread Serenade -->
+      <div class="drink">
+        <img src="images/gingerbread_latte.png" alt="Gingerbread Serenade">
+        <div class="drink-info">
+          <h3>Gingerbread Serenade</h3>
+          <p>
+            Sweet, spiced, and unapologetically cozy — the Gingerbread Serenade is a seasonal favorite that deserves to stay
+            all year. Crafted with our signature espresso, steamed milk, gingerbread spice syrup, and a sprinkle of nutmeg,
+            it sings with notes of molasses and warmth. Each cup feels like a soft carol in a mug.
+          </p>
+          <p class="ingredients"><em>Ingredients:</em> espresso, milk, gingerbread syrup, molasses, nutmeg, whipped topping.</p>
+          <button class="order-btn">Order Now</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer injected here -->
+  <footer></footer>
+
 </body>
 </html>
