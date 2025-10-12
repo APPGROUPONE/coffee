@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cafe 4080 Coffee Shop</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href=".vscode/css/home.css" />
+</head>
+<body>
+  <!-- ==========================================================
+       NAVBAR
+       ========================================================== -->
+  <header class="navbar">
+    <!-- Logo -->
+    <div class="logo">
+      <img src="images/4080inverselogo.png" alt="Cafe 4080 Logo" class="logo-default">
+      <img src="images/4080cafelogo.png" alt="Cafe 4080 Logo Hover" class="logo-hover">
+    </div>
+
+    <!-- Navigation Links -->
+    <nav>
+      <ul>
+        <li><a href="home.html" class="active">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+
+    <!-- Profile + Cart Icons -->
+    <div class="nav-icons">
+      <div class="icon profile-icon">
+        <img src="images/profile_icon_light.png" class="light" alt="Profile">
+        <img src="images/profile_icon_brown.png" class="brown" alt="Profile Hover">
+      </div>
+
+      <div class="icon cart-icon">
+        <img src="images/shopping_bag_icon_light.png" class="light" alt="Cart">
+        <img src="images/shopping_bag_icon_brown.png" class="brown" alt="Cart Hover">
+      </div>
+    </div>
+  </header>
+
+  <!-- ==========================================================
+       HERO SECTION
+       ========================================================== -->
+  <section class="hero">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="videos/Coffee_pouring_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+      <h1 id="greeting">Welcome to Brew Haven</h1>
+      <p>Your perfect cup of coffee awaits. Order online or visit us today!</p>
+      <a href="shop.html" class="btn">Shop Now</a>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       FEATURED SECTION
+       ========================================================== -->
+  <section class="featured">
+    <h2>Our Favorites</h2>
+    <div id="featured-products" class="cards"></div>
+  </section>
+
+  <!-- ==========================================================
+       FOOTER
+       ========================================================== -->
+  <footer>
+    <p>© 2025 Brew Haven Coffee Shop | All Rights Reserved</p>
+  </footer>
+
+  <script src="js/home.js"></script>
+</body>
+</html>
