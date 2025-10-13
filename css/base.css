@@ -1,5 +1,5 @@
 /* ==========================================================
-   GENERAL RESET & BASE FONT
+   RESET & BASE STYLES
    ========================================================== */
 * {
   margin: 0;
@@ -14,6 +14,15 @@ body {
   line-height: 1.6;
 }
 
+/* Accent Colors */
+:root {
+  --accent-orange: #f06543;
+  --deep-red: #5a1a13;
+  --coffee-brown: #3c2a21;
+  --cream: #faf6f2;
+  --soft-tan: #d5bfa3;
+}
+
 /* ==========================================================
    BUTTONS
    ========================================================== */
@@ -23,35 +32,38 @@ body {
   cursor: pointer;
   transition: all 0.3s ease;
   text-decoration: none;
+  display: inline-block;
 }
 
 .btn {
-  background-color: #d5bfa3;
-  color: #3c2a21;
+  background-color: var(--soft-tan);
+  color: var(--coffee-brown);
   padding: 0.9rem 1.8rem;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
 .btn:hover {
-  background-color: #3c2a21;
+  background-color: var(--accent-orange);
   color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(240, 101, 67, 0.2);
 }
 
 .order-btn {
   margin-top: 1.5rem;
   padding: 0.8rem 2rem;
-  background-color: #3c2a21;
+  background-color: var(--deep-red);
   color: #f5efe6;
   border: none;
   font-size: 1rem;
 }
 
 .order-btn:hover {
-  background-color: #d5bfa3;
-  color: #3c2a21;
-  transform: translateY(-2px);
-  box-shadow: 0 4px 10px rgba(60, 42, 33, 0.15);
+  background-color: var(--accent-orange);
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 4px 12px rgba(90, 26, 19, 0.2);
 }
 
 /* ==========================================================
