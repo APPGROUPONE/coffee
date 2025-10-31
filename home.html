@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe 4080 Coffee Shop</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Tangerine:wght@400;700&display=swap" rel="stylesheet">
+
+
+  <!-- Modular CSS -->
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/drinks.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <!-- Favicon -->
+  <link rel="icon" href="images/coffee-favicon.png" type="image/png">
+
+
+  <!-- JS to load shared components -->
+  <script src="js/load-components.js" defer></script>
+</head>
+<body>
+
+  <!-- Navbar injected here -->
+  <header class="navbar"></header>
+
+  <!-- ==========================================================
+       HERO SECTION
+       ========================================================== -->
+  <section class="hero">
+    <video autoplay muted loop playsinline id="heroVideo">
+      <source src="videos/Coffee_pouring_video.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+
+    <div class="hero-content">
+      <h1 id="greeting">The Art of a Perfect Pour</h1>
+      <p>Savor every note, every aroma — your moment of calm begins here at Café 4080.</p>
+      <a href="menu.html" class="btn">Explore Our Menu</a>
+    </div>
+  </section>
+
+  <!-- ==========================================================
+       FEATURED DRINKS SECTION
+       ========================================================== -->
+ <section class="featured-drinks">
+  <h2>Our Featured Drinks</h2>
+  <p class="intro-text">
+    From smooth classics to bold brews, discover Café 4080’s signature drinks — each cup crafted to perfection and designed to make every sip unforgettable.
+  </p>
+
+  <div class="drinks-container">
+
+    <!-- Classic Latte -->
+    <div class="drink">
+      <img src="images/coffee-1630935.jpg" alt="Classic Latte">
+      <div class="drink-info">
+        <h3>Classic Latte</h3>
+        <p>
+          Simple, elegant, and endlessly comforting. Our Classic Latte combines rich espresso with steamed milk and a silky microfoam top.
+          Every sip offers a smooth balance of bold and mellow — a timeless favorite that never goes out of style.
+        </p>
+        <p class="ingredients"><em>Ingredients:</em> espresso, steamed milk, microfoam.</p>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- Vietnamese Iced Latte -->
+    <div class="drink">
+      <img src="images/iced-coffee-social.jpg" alt="Vietnamese Iced Latte">
+      <div class="drink-info">
+        <h3>Vietnamese Iced Latte</h3>
+        <p>
+          Sweetened with authentic condensed milk and poured over ice, our Vietnamese Iced Latte is a refreshing twist on tradition.
+          It’s creamy, bold, and lightly caramelized — the perfect pick-me-up for warm days or afternoon energy boosts.
+        </p>
+        <p class="ingredients"><em>Ingredients:</em> espresso, sweetened condensed milk, ice.</p>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+
+    <!-- Classic Cappuccino -->
+    <div class="drink">
+      <img src="images/latte.jpg" alt="Classic Cappuccino">
+      <div class="drink-info">
+        <h3>Classic Cappuccino</h3>
+        <p>
+          Bold espresso, velvety steamed milk, and a cloud of frothy foam come together for our Classic Cappuccino.
+          Lightly dusted with cocoa powder, it’s rich and airy in perfect harmony — an artful pour that celebrates coffee’s purest form.
+        </p>
+        <p class="ingredients"><em>Ingredients:</em> espresso, steamed milk, foam, cocoa dust.</p>
+        <button class="order-btn">Order Now</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+  <!-- Footer injected here -->
+  <footer></footer>
+
+</body>
+</html>
