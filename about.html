@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cafe 4080 Coffee Shop</title>
+
+ <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/about.css">        <!-- added: load page styles -->
+  <link rel="stylesheet" href="css/navbar.css">
+  <link rel="stylesheet" href="css/hero.css">
+  <link rel="stylesheet" href="css/drinks.css">
+  <link rel="stylesheet" href="css/footer.css">
+
+  <script src="js/load-components.js" defer></script>
+
+</head>
+ <!-- Navbar injected here -->
+  <header class="navbar"></header>
+
+<body>
+  <!-- === Scene 1 === -->
+  <section class="scroll-scene">
+    <video src="videos/pour1.mp4" autoplay muted loop playsinline></video>
+    <div class="overlay">
+      <h2>It all starts with a single pour...</h2>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- === Scene 2 === -->
+  <section class="scroll-scene">
+    <video src="videos/pour2.mp4" autoplay muted loop playsinline></video>
+    <div class="overlay">
+      <h2>Crafted by hand, perfected with passion.</h2>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- === Scene 3 === -->
+  <section class="scroll-scene">
+    <video src="videos/pour3.mp4" autoplay muted loop playsinline></video>
+    <div class="overlay">
+      <h2>Every cup tells our story.</h2>
+    </div>
+  </section>
+
+  <div class="divider"></div>
+
+  <!-- === Scene 4 === -->
+  <section class="scroll-scene">
+    <video src="videos/pour4.mp4" autoplay muted loop playsinline></video>
+    <div class="overlay">
+      <h2>Welcome to Café 4080.</h2>
+    </div>
+  </section>
+
+  <script>
+    // === Simple scroll-trigger logic ===
+    const scenes = document.querySelectorAll(".scroll-scene");
+
+    const activateScene = () => {
+      const triggerPoint = window.innerHeight * 0.6;
+      scenes.forEach((scene) => {
+        const rect = scene.getBoundingClientRect();
+        const inView = rect.top < triggerPoint && rect.bottom > triggerPoint;
+        scene.classList.toggle("active", inView);
+      });
+    };
+
+    window.addEventListener("scroll", activateScene);
+    window.addEventListener("load", activateScene);
+  </script>
+</body>
+<footer></footer>
+</html>
