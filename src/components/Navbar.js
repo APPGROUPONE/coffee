@@ -1,42 +1,43 @@
-import React from 'react';
-import '../css/navbar.css';
-import logoInverse from '../images/4080inverselogo.png';
-import logoCafe from '../images/4080cafelogo.png';
-import profileLight from '../images/profile_icon_light.png';
-import profileBrown from '../images/profile_icon_brown.png';
-import bagLight from '../images/shopping_bag_icon_light.png';
-import bagBrown from '../images/shopping_bag_icon_brown.png';
+import React from "react";
+import { Link, useLocation } from "react-router-dom";
+import "../css/navbar.css";
 
 function Navbar() {
+  const location = useLocation();
+
   return (
-    <div className="site-navbar">
-      <div className="logo">
-        <img src={logoInverse} alt="Cafe 4080 Logo" className="logo-default" />
-        <img src={logoCafe} alt="Cafe 4080 Logo Hover" className="logo-hover" />
+    <header className="navbar">
+      <div className="navbar-logo">
+        <h1>Coffee Bliss ☕</h1>
       </div>
 
       <nav>
         <ul>
-          <li><a href="#" className="active">Home</a></li>
-          <li><a href="#about">About</a></li>
-          <li><a href="#menu">Menu</a></li>
-          <li><a href="#shop">Shop</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li>
+            <Link
+              to="/"
+              className={location.pathname === "/" ? "active" : ""}
+            >
+              Home
+            </Link>
+          </li>
+          <li>
+            <Link
+              to="/menu"
+              className={location.pathname === "/menu" ? "active" : ""}
+            >
+              Menu
+            </Link>
+          </li>
+          <li>
+            <a href="#shop">Shop</a>
+          </li>
+          <li>
+            <a href="#contact">Contact</a>
+          </li>
         </ul>
       </nav>
-
-      <div className="nav-icons">
-        <div className="icon profile-icon">
-          <img src={profileLight} className="light" alt="Profile" />
-          <img src={profileBrown} className="brown" alt="Profile Hover" />
-        </div>
-
-        <div className="icon cart-icon">
-          <img src={bagLight} className="light" alt="Cart" />
-          <img src={bagBrown} className="brown" alt="Cart Hover" />
-        </div>
-      </div>
-    </div>
+    </header>
   );
 }
 
