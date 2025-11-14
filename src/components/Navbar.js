@@ -26,16 +26,9 @@ function Navbar() {
       </nav>
 
       <div className="nav-icons">
-        <div className="icon profile-icon">
-          <img src={profileLight} className="light" alt="Profile" />
-          <img src={profileBrown} className="brown" alt="Profile Hover" />
+          <a href="/login">Login</a>
+          <a href="/signup">Signup</a>
         </div>
-
-        <div className="icon cart-icon">
-          <img src={bagLight} className="light" alt="Cart" />
-          <img src={bagBrown} className="brown" alt="Cart Hover" />
-        </div>
-      </div>
     </div>
   );
 }
