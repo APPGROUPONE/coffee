@@ -2,7 +2,7 @@ import React from "react";
 
 export default function About() {
   return (
-    <div className="pt-28 px-6 pb-20 bg-[#f9f4ef] min-h-screen fade-in">
+    <div className="fade-page pt-28 px-6 pb-20 bg-[#f9f4ef] min-h-screen fade-in">
       <div className="max-w-4xl mx-auto text-center">
 
         <h1 className="text-4xl font-extrabold text-[#2B1B15] mb-4">

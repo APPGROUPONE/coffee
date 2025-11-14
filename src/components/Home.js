@@ -11,6 +11,7 @@ import heroVideo from '../videos/Coffee_pouring_video.mp4';
 function Home() {
   return (
     <>
+     <div className="fade-page pt-28 px-6 ..."></div>
       <section className="hero">
         <video autoPlay muted loop playsInline id="heroVideo">
           <source src={heroVideo} type="video/mp4" />
