@@ -10,43 +10,42 @@ export default function Checkout({ cartItems, onPlaceOrder }) {
   // Calculate total
   const total = cartItems.reduce((sum, item) => sum + item.price * item.qty, 0);
 
-  // Handle form submission for regular order (optional)
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (cartItems.length === 0) {
-      alert("Your cart is empty!");
-      return;
-    }
-    const order = { name, email, address, items: cartItems, total };
-    onPlaceOrder(order);
-    alert("Order placed successfully!");
-  };
-
-  // Handle Mpesa payment
   const handleMpesaPayment = async () => {
-    if (!phone || cartItems.length === 0) {
-      alert("Enter your phone number and make sure your cart is not empty.");
+    if (!phone || !name || !address || cartItems.length === 0) {
+      alert("Please fill all required fields and ensure your cart is not empty.");
       return;
     }
 
     setLoading(true);
+
     try {
-      const response = await fetch("/api/pay", {
+      const response = await fetch("http://localhost:5000/api/pay", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ phone, amount: total }),
+        body: JSON.stringify({
+          phone,
+          amount: total,
+          name,
+          email,
+          address,
+          items: cartItems,
+        }),
       });
 
       const data = await response.json();
-      console.log("STK Push Response:", data);
+      console.log("STK Push response from backend:", data);
 
-      if (data.ResponseCode === "0") {
-        alert("STK Push sent! Check your phone to complete payment.");
+      if (data.response?.data?.ResponseCode === "0") {
+        alert(
+          `STK Push sent! Check your phone to complete payment.\nOrder ID: ${data.orderId}`
+        );
+        // Optional: clear cart or call parent handler
+        onPlaceOrder({ name, email, address, phone, items: cartItems, total });
       } else {
         alert("Payment initiation failed. Check console for details.");
       }
     } catch (error) {
-      console.error(error);
+      console.error("Error initiating payment:", error);
       alert("Payment failed. Try again.");
     } finally {
       setLoading(false);
@@ -84,7 +83,7 @@ export default function Checkout({ cartItems, onPlaceOrder }) {
         </div>
 
         {/* Billing & Mpesa Payment Form */}
-        <form className="flex-1 bg-white shadow-lg rounded-2xl p-6" onSubmit={handleSubmit}>
+        <div className="flex-1 bg-white shadow-lg rounded-2xl p-6">
           <h2 className="text-2xl font-semibold mb-4">Billing & Shipping Info</h2>
 
           <label className="block mb-4">
@@ -104,7 +103,6 @@ export default function Checkout({ cartItems, onPlaceOrder }) {
               type="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              required
               className="w-full mt-1 p-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-orange-400"
             />
           </label>
@@ -141,15 +139,7 @@ export default function Checkout({ cartItems, onPlaceOrder }) {
           >
             {loading ? "Processing..." : "Pay with Mpesa"}
           </button>
-
-          {/* Optional: normal submit */}
-          <button
-            type="submit"
-            className="w-full py-3 rounded-xl font-semibold mt-4 bg-orange-600 hover:bg-orange-700 text-white"
-          >
-            Place Order (Offline)
-          </button>
-        </form>
+        </div>
       </div>
     </div>
   );
