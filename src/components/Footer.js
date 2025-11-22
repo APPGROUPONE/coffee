@@ -11,20 +11,20 @@ function Footer() {
           <p className="tagline">Where every cup tells a story</p>
           <p>Crafting exceptional coffee experiences since 2020. Join us for artisan brews and warm conversations.</p>
           <div className="social-links">
-            <a href="#" aria-label="Facebook">f</a>
-            <a href="#" aria-label="Instagram">i</a>
-            <a href="#" aria-label="Twitter">t</a>
+            <a href="https://facebook.com" aria-label="Facebook">f</a>
+            <a href="https://instagram.com" aria-label="Instagram">i</a>
+            <a href="https://twitter.com" aria-label="Twitter">t</a>
           </div>
         </div>
 
         <div className="footer-section">
           <h3>Quick Links</h3>
-          <a href="#">Menu</a>
-          <a href="#">About Us</a>
-          <a href="#">Events</a>
-          <a href="#">Catering</a>
-          <a href="#">Gift Cards</a>
-          <a href="#">Careers</a>
+          <a href="/#menu">Menu</a>
+          <a href="/#about">About Us</a>
+          <a href="/#events">Events</a>
+          <a href="/#catering">Catering</a>
+          <a href="/#gift">Gift Cards</a>
+          <a href="/#careers">Careers</a>
         </div>
 
         <div className="footer-section">

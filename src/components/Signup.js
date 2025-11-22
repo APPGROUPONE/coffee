@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import '../css/auth.css';
 
 const Signup = () => {
   const [formData, setFormData] = useState({
@@ -38,41 +39,43 @@ const Signup = () => {
   };
 
   return (
-    <div>
-      <h1>Sign Up</h1>
-      <form onSubmit={(e) => onSubmit(e)}>
-        <div>
-          <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            value={name}
-            onChange={(e) => onChange(e)}
-            required
-          />
-        </div>
-        <div>
-          <input
-            type="email"
-            placeholder="Email Address"
-            name="email"
-            value={email}
-            onChange={(e) => onChange(e)}
-            required
-          />
-        </div>
-        <div>
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            value={password}
-            onChange={(e) => onChange(e)}
-            minLength="6"
-          />
-        </div>
-        <input type="submit" value="Register" />
-      </form>
+    <div className="auth-container">
+      <div className="auth-form-wrapper">
+        <h1>Sign Up</h1>
+        <form onSubmit={(e) => onSubmit(e)}>
+          <div>
+            <input
+              type="text"
+              placeholder="Name"
+              name="name"
+              value={name}
+              onChange={(e) => onChange(e)}
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="email"
+              placeholder="Email Address"
+              name="email"
+              value={email}
+              onChange={(e) => onChange(e)}
+              required
+            />
+          </div>
+          <div>
+            <input
+              type="password"
+              placeholder="Password"
+              name="password"
+              value={password}
+              onChange={(e) => onChange(e)}
+              minLength="6"
+            />
+          </div>
+          <input type="submit" value="Register" />
+        </form>
+      </div>
     </div>
   );
 };
