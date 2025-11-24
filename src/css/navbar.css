@@ -1,10 +1,9 @@
-/* =============================================================================================
-   NAVRAR
-   ============================================================================================
-   */
+/* ==========================================================
+   NAVBAR
+   ========================================================== */
 .navbar {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
   height: 150px;
   padding: 2rem 6rem;
@@ -23,12 +22,15 @@
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* =============================================================================================
+/* ==========================================================
    LOGO SWITCH
-   ============================================================================================
-   */
+   ========================================================== */
 .logo {
-  height: 100px;
+  position: absolute;
+  left: 3rem;
+  top: 50%;
+  transform: translateY(-50%);
+  height: 375px;
 }
 
 .logo img {
@@ -44,19 +46,19 @@
 .navbar:hover .logo-default { opacity: 0; }
 .navbar:hover .logo-hover { opacity: 1; }
 
-/* ===========================================================================================9
+/* ==========================================================
    NAV LINKS
-   ============================================================================================
-   */
+   ========================================================== */
 .navbar ul {
   list-style: none;
   display: flex;
   gap: 6rem;
+  margin-left: 4rem;
 }
 
 .navbar a {
   position: relative;
-  color: #3c2a21;
+  color: #efe1cf;
   text-decoration: none;
   font-weight: 600;
   font-size: 2.4rem;
@@ -78,17 +80,20 @@
 .navbar a:hover::after,
 .navbar a.active::after { width: 100%; }
 
-.navbar a.active { color: #3c2a21; }
+.navbar a.active { color: #efe1cf; }
 
 .navbar:hover a { color: #3c2a21; }
 .navbar:hover a::after { background-color: #3c2a21; }
-.navbar:hover a.ictive::after { background-color: #CE6950; }
+.navbar:hover a.active::after { background-color: #CE6950; }
 
-/* ===========================================================================================9
-   NAVRAR ICONS
-   ============================================================================================
-   */
+/* ==========================================================
+   NAVBAR ICONS
+   ========================================================== */
 .nav-icons {
+  position: absolute;
+  right: 4rem;
+  top: 50%;
+  transform: translateY(-50%);
   display: flex;
   align-items: center;
   gap: 2rem;
@@ -116,10 +121,9 @@
 
 .icon:hover img { filter: brightness(1.1); }
 
-/* ============================================================================================9
+/* ==========================================================
    SCROLLED STATE
-   ============================================================================================
-   */
+   ========================================================== */
 .navbar.scrolled {
   background-color: #efe1cf;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
@@ -127,7 +131,7 @@
 
 .navbar.scrolled a { color: #3c2a21; }
 .navbar.scrolled a::after { background-color: #3c2a21; }
-.navbar.scrolled a.ictive::after { background-color: #CE6950; }
+.navbar.scrolled a.active::after { background-color: #CE6950; }
 
 .navbar.scrolled .logo-default { opacity: 0; }
 .navbar.scrolled .logo-hover { opacity: 1; }
@@ -135,11 +139,10 @@
 .navbar.scrolled .icon img.light { opacity: 0; }
 .navbar.scrolled .icon img.brown { opacity: 1; }
 
-/* ===========================================================================================9
+/* ==========================================================
    RESPONSIVE
-   =============================================================================================
-   */
-@media(&kp��a: 768px) {
+   ========================================================== */
+@media (max-width: 768px) {
   .navbar { flex-direction: column; gap: 0.5rem; height: auto; }
   .logo { position: static; transform: none; height: auto; }
   .logo img { height: 180px; }

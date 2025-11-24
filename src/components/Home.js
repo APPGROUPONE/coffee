@@ -19,7 +19,10 @@ function Home() {
         <div className="hero-content">
           <h1 id="greeting">The Art of a Perfect Pour</h1>
           <p>Savor every note, every aroma — your moment of calm begins here at Café 4080.</p>
-          <a href="#menu" className="btn">Explore Our Menu</a>
+          <Link to="/menu" className="btn">
+  Explore Our Menu
+</Link>
+
         </div>
       </section>
 
