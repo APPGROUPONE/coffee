@@ -1,0 +1,31 @@
+
+
+services:
+  mongo:
+    image: mongo:6.0
+    container_name: coffee_mongo
+    restart: unless-stopped
+    environment:
+      MONGO_INITDB_DATABASE: coffee_shop
+    volumes:
+      - mongo_data:/data/db
+      - ./docker/mongo-init:/docker-entrypoint-initdb.d:ro
+    ports:
+      - "27017:27017"
+
+  mongo-express:
+    image: mongo-express:1.0.0
+    container_name: coffee_mongo_express
+    depends_on:
+      - mongo
+    environment:
+      ME_CONFIG_MONGODB_SERVER: mongo
+    
+      
+      ME_CONFIG_BASICAUTH_USERNAME: admin
+      ME_CONFIG_BASICAUTH_PASSWORD: password
+    ports:
+      - "8082:8081"
+
+volumes:
+  mongo_data:

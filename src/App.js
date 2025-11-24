@@ -35,7 +35,7 @@ function App() {
         <Route
           path="/menu"
           element={
-            <MenuPage
+            <Menu
               cart={cart}
               setCart={setCart}
               cartOpen={cartOpen}
