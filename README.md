@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+# coffee
+coffee shop website
+=======
 # Coffee2 (Cafe 4080) — React harmonization
 
 This repository was originally a static site. I converted the in-`src/components/*.html` fragments into React components and wired them into `src/App.js` so the project runs under Create React App.
@@ -104,3 +108,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
 
 changes to be applied.
+>>>>>>> main

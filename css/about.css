@@ -1,0 +1,71 @@
+* {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background-color: #0e0e0e;
+      color: #fff;
+      overflow-x: hidden;
+    }
+
+    /* === Section wrapper === */
+    .scroll-scene {
+        position: relative;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+
+    /* === Background videos === */
+    .scroll-scene video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;        /* show the whole video (no crop) */
+        object-position: center;    /* control focal point if needed */
+        background-color: #000;     /* fills gaps when aspect ratio doesn’t match */
+        z-index: 1;                 /* keeps video behind the text */
+        filter: blur(0);
+        transition: filter 2.2s ease, opacity 1.2s ease;
+    }
+
+    /* === Overlay text === */
+    .overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 2rem;
+      opacity: 0;
+      transition: opacity 1.2s ease;
+      background: rgba(0, 0, 0, 0.25);
+    }
+
+    .overlay h2 {
+      font-size: clamp(1.8rem, 3vw, 3rem);
+      font-weight: 500;
+      line-height: 1.3;
+      max-width: 700px;
+    }
+
+    /* === Active animation state === */
+    .scroll-scene.active video {
+      filter: blur(6px) brightness(0.7);
+    }
+
+    .scroll-scene.active .overlay {
+      opacity: 1;
+    }
+
+    /* === Optional transition divider === */
+    .divider {
+      height: 30vh;
+      background-color: #0e0e0e;
+    }
